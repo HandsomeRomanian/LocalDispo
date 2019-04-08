@@ -26,7 +26,7 @@ main{
 }
 
 #mainNav{
-  background-color: #591928;
+  background-color: #2b2d42;
   font-size: 2rem;
   font-family: 'Montserrat';
   padding:1.5rem;
@@ -38,7 +38,7 @@ main{
 }
 
 a {
-  color: #f79824;
+  color: #8d99ae;
   text-decoration: none;
 }
 
@@ -53,12 +53,12 @@ header>h1{
 }
 
 footer{
-  background-color: #591928;
+  background-color: #2b2d42;
   padding: 10px;
   text-align: center;
   padding-top:4.5rem;
   font-size: 2rem;
-  color: #f79824;
+  color: #8d99ae;
   font-family: 'Montserrat';
   font-weight: bold !important; 
 }
