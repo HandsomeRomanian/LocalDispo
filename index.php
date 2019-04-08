@@ -6,34 +6,35 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<!-- Bootstrap core CSS -->
-	
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link href="node_modules\@fortawesome\fontawesome-free\css\all.min.css" rel="stylesheet" type="text/css">
 
 
-	Custom fonts for this template
 	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400i,700i" rel="stylesheet" type="text/css"> -->
-	
+
 
 
 	<!-- Custom styles for this template -->
-	<link href="css/freelancer.min.css" rel="stylesheet">
+	<!-- <link href="css/freelancer.min.css" rel="stylesheet"> -->
 
-	<link rel="stylesheet" href="css/style.css"> 	<!-- Resource style -->
-	<link rel="stylesheet" href="css/fonts.css"> 
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/fonts.css">
 
 	<title>Test dispso des locaux</title>
 </head>
 
 <body class="page-top">
 	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg bg-secondary fixed-top " id="mainNav">
+	<nav class="navbar navbar-expand-lg fixed-top " id="mainNav">
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
 			<button class="navbar-toggler navbar-toggler-right bg-primary text-white rounded" type="button"
-			 data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-			 aria-label="Toggle navigation">
+				data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+				aria-label="Toggle navigation">
 				Menu
 				<i class="fas fa-bars"></i>
 			</button>
@@ -53,10 +54,10 @@
 		</div>
 	</nav>
 
-	<section>
+	<main>
 		<header class="masthead">
-				<h1 class="text-center text-uppercase ">D-6969</h1>
-				<h2 class="text-center font-weight-light mb-0"></h2>
+			<h1 class="text-center text-uppercase ">D-6969</h1>
+			<h2 class="text-center font-weight-light mb-0"></h2>
 		</header>
 
 
@@ -268,67 +269,46 @@
 			<div class="cover-layer"></div>
 
 		</div> <!-- .cd-schedule -->
-	</section>
+	</main>
 
-    <!-- Footer -->
-    <footer class="footer text-center">
-			<div class="container">
-			  <div class="row">
+	<!-- Footer -->
+	<footer class="footer text-center">
+		<div class="container">
+			<div class="row">
 				<div class="col-md-4 mb-5 mb-lg-0">
-				  <h4 class="text-uppercase mb-4">Location</h4>
-				  <p class="lead mb-0">Montreal
-					<br>Quebec, Canada</p>
+					<h4 class="text-uppercase mb-4">Location</h4>
+					<p class="lead mb-0">Montreal
+						<br>Quebec, Canada</p>
 				</div>
 				<div class="col-md-4 mb-5 mb-lg-0">
-				  <h4 class="text-uppercase mb-4">Around the Web</h4>
-				  <ul class="list-inline mb-0">
-					<li class="list-inline-item">
-					  <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-						<i class="fab fa-fw fa-facebook-f"></i>
-					  </a>
-					</li>
-					<li class="list-inline-item">
-					  <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-						<i class="fab fa-fw fa-google-plus-g"></i>
-					  </a>
-					</li>
-					<li class="list-inline-item">
-					  <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-						<i class="fab fa-fw fa-twitter"></i>
-					  </a>
-					</li>
-					<li class="list-inline-item">
-					  <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-						<i class="fab fa-fw fa-linkedin-in"></i>
-					  </a>
-					</li>
-					<li class="list-inline-item">
-					  <a class="btn btn-outline-light btn-social text-center rounded-circle" href="#">
-						<i class="fab fa-fw fa-dribbble"></i>
-					  </a>
-					</li>
-				  </ul>
+					<h4 class="text-uppercase mb-4">Around the Web</h4>
+
+					<a href="#" class="fab fa-facebook"></a>
+					<a href="#" class="fab fa-twitter"></a>
+					<a href="#" class="fab fa-github"></a>
+
 				</div>
 				<div class="col-md-4">
-				  <h4 class="text-uppercase mb-4">Open Classroom Schedule</h4>
-				  <p class="lead mb-0">WIP uncompleted design.</p>
+					<h4 class="text-uppercase mb-4">Open Classroom Schedule</h4>
+					<p class="lead mb-0">WIP uncompleted design.</p>
 				</div>
-			  </div>
 			</div>
-		  </footer>
-	  
-		  <div class="copyright py-4 text-center text-white">
+		</div>
+
+		<div class="copyright text-center text-white">
 			<div class="container">
-			  <small>Copyright &copy; Matei Martin 2019</small>
+				<p>Copyright &copy; Matei Martin 2019</p>
 			</div>
-		  </div>
-	  
-		  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-		  <div class="scroll-to-top d-lg-none position-fixed ">
-			<a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
-			  <i class="fa fa-chevron-up"></i>
-			</a>
-		  </div>
+		</div>
+	</footer>
+
+
+	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+	<div class="scroll-to-top d-lg-none position-fixed ">
+		<a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+			<i class="fa fa-chevron-up"></i>
+		</a>
+	</div>
 
 
 
@@ -337,9 +317,15 @@
 		if (!window.jQuery) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
 	</script>
 	<script src="js/main.js"></script> <!-- Resource jQuery -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+	</script>
 </body>
 
 </html>

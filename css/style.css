@@ -1,3 +1,4 @@
+
 /* -------------------------------- 
 
 Primary style
@@ -8,28 +9,81 @@ Primary style
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 60%;
 }
 
 body {
+  height:100%;
   font-size: 1.6rem;
   font-family: "Source Sans Pro", sans-serif;
   color: #222222;
   background-color: white;
 }
 
+main{
+  margin-top:10rem;
+  margin-bottom:15rem;
+}
+
+#mainNav{
+  background-color: #591928;
+  font-size: 2rem;
+  font-family: 'Montserrat';
+  padding:1.5rem;
+  font-weight: bold;
+}
+
+.navbar-brand{
+  font-size: 3rem;
+}
+
 a {
-  color: #A2B9B2;
+  color: #f79824;
   text-decoration: none;
 }
 
 a:hover {
-  color: #A2B9B2;
+  color: #f9b45f;
   text-decoration: none;
 }
+
+header>h1{
+  font-weight: bold;
+  font-size: 10rem;
+}
+
+footer{
+  background-color: #591928;
+  padding: 10px;
+  text-align: center;
+  padding-top:4.5rem;
+  font-size: 2rem;
+  color: #f79824;
+  font-family: 'Montserrat';
+  font-weight: bold !important; 
+}
+
+footer>div>div>div>h4{
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.fab,.btn-social{
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.copyright{
+  font-size:12px;
+  margin-bottom:0px;
+  padding-top:2rem;
+}
+
 /* -------------------------------- 
 
-Main Components 
+Schedule Components 
 
 -------------------------------- */
 .cd-schedule {
