@@ -11,27 +11,27 @@
 	<link href="node_modules\@fortawesome\fontawesome-free\css\all.min.css" rel="stylesheet" type="text/css">
 
 
-	<!-- Custom fonts for this template -->
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	Custom fonts for this template
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400i,700i" rel="stylesheet" type="text/css"> -->
+	
 
-	<!-- Plugin CSS -->
 
 	<!-- Custom styles for this template -->
 	<link href="css/freelancer.min.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
 
-	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/style.css"> 	<!-- Resource style -->
+	<link rel="stylesheet" href="css/fonts.css"> 
 
 	<title>Test dispso des locaux</title>
 </head>
 
 <body class="page-top">
 	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+	<nav class="navbar navbar-expand-lg bg-secondary fixed-top " id="mainNav">
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
-			<button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button"
+			<button class="navbar-toggler navbar-toggler-right bg-primary text-white rounded" type="button"
 			 data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
 			 aria-label="Toggle navigation">
 				Menu
@@ -93,8 +93,8 @@
 						<div class="top-info"><span>Monday</span></div>
 
 						<ul>
-							<li href="/test.php" class="single-event" data-start="08:40" data-end="9:40" data-content="reseau1" data-event="class-1">
-								<a href="test">
+							<li class="single-event" data-start="08:40" data-end="9:40" data-content="reseau1" data-event="class-1">
+								<a href="#0">
 									<em class="class-name">Reseau1</em>
 								</a>
 							</li>
