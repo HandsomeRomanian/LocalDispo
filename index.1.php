@@ -19,16 +19,13 @@ foreach ($json_output->Locals as $tmp) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-	<!-- Bootstrap core CSS -->
 
+
+	<!-- Bootstrap core CSS -->
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400i,700i" rel="stylesheet" type="text/css"> -->
-
 
 
 	<!-- Custom styles for this template -->
@@ -69,7 +66,7 @@ foreach ($json_output->Locals as $tmp) {
 
 	<main>
 		<header class="masthead">
-			<h1 class="text-center text-uppercase ">D-6969</h1>
+			<h1 class="text-center text-uppercase ">D-<?php echo $Local->Emplacement ?></h1>
 			<h2 class="text-center font-weight-light mb-0"></h2>
 		</header>
 

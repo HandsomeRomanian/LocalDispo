@@ -390,6 +390,51 @@ Schedule Components
   background: #f7bd7f;
 }
 
+.cd-schedule .single-event[data-event="class-5"],
+.cd-schedule [data-event="class-5"] .header-bg {
+  background: #387780;
+}
+
+.cd-schedule .single-event[data-event="class-5"]:hover {
+  background: #4a838b;
+}
+
+.cd-schedule .single-event[data-event="class-6"],
+.cd-schedule [data-event="class-6"] .header-bg {
+  background: #81b29a;
+}
+
+.cd-schedule .single-event[data-event="class-6"]:hover {
+  background: #aecebe;
+}
+
+.cd-schedule .single-event[data-event="class-7"],
+.cd-schedule [data-event="class-7"] .header-bg {
+  background: #2dc2bd;
+}
+
+.cd-schedule .single-event[data-event="class-7"]:hover {
+  background: #79d8d5;
+}
+
+.cd-schedule .single-event[data-event="class-8"],
+.cd-schedule [data-event="class-8"] .header-bg {
+  background: #7f7eff;
+}
+
+.cd-schedule .single-event[data-event="class-8"]:hover {
+  background: #b9b8ff;
+}
+
+.cd-schedule .single-event[data-event="class-9"],
+.cd-schedule [data-event="class-9"] .header-bg {
+  background: #cc8b8c;
+}
+
+.cd-schedule .single-event[data-event="class-9"]:hover {
+  background: #deb5b5;
+}
+
 .cd-schedule .class-modal {
   position: fixed;
   z-index: 3;
