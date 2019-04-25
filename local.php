@@ -10,7 +10,6 @@ foreach ($json_output->Locals as $tmp) {
     	$Local = $tmp;
 }
 
-
 ?>
 
 <!doctype html>
@@ -216,7 +215,7 @@ for ($i=0; $i < 5; $i++) { ?>
 	<script>
 		if (!window.jQuery) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
 	</script>
-	<script src="js/main.js"></script> <!-- Resource jQuery -->
+	<script src="js/schedule.js"></script> <!-- Resource jQuery -->
 </body>
 
 </html>

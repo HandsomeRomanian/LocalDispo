@@ -81,6 +81,72 @@ footer>div>div>div>h4{
   padding-top:2rem;
 }
 
+.border{
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 10;
+  background: red;
+}
+
+.grid-container {
+  display: grid;
+  height: 1000px;
+  grid-template-columns: 1% 20% 20% 20% 20% 20%;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.gridClass{
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.className{
+  color:white;
+  font-weight: bold;
+}
+
+.classDur1{
+  grid-row-end: 1;
+}
+.classDur2{
+  grid-row-end: 2;
+}
+.classDur3{
+  grid-row-end: 3;
+}
+.classDur4{
+  grid-row-end: 4;
+}
+.classDur5{
+  grid-row-end: 5;
+}
+.classCol1{
+  background: #443453;
+  background: #81b29a;
+  background: #2dc2bd;
+  background: #A2B9B2;
+}
+.classCol2{
+  background: #577F92;
+}
+.classCol3{
+  background: #f6b067;
+}
+.classCol4{
+  background: #387780;
+}
+.classCol5{
+  background: #2dc2bd;
+}
+
+
 /* -------------------------------- 
 
 Schedule Components 
@@ -365,7 +431,6 @@ Schedule Components
 
 .cd-schedule .single-event[data-event="class-2"],
 .cd-schedule [data-event="class-2"] .header-bg {
-  background: #443453;
 }
 
 .cd-schedule .single-event[data-event="class-2"]:hover {

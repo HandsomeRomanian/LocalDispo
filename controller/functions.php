@@ -31,9 +31,6 @@ function getDispo($jour, $numeroLocal){
 
 function checkFree($jours, $numeroLocal){
 
-
-
-
 }
 
 ?>

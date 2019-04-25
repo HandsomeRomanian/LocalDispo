@@ -3,11 +3,11 @@ session_start();
 ob_start();
 include("controller\\functions.php");
 $json_output = json_decode(file_get_contents("json/local.json"));
-$Local;
+$Local = 602;
 $Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
 foreach ($json_output->Locals as $tmp) {
-    if ($tmp->Emplacement == $_GET["local"])
-    	$Local = $tmp;
+	if ($tmp->Emplacement == $_GET["local"])
+		$Local = $tmp;
 }
 
 
@@ -192,7 +192,7 @@ foreach ($json_output->Locals as $tmp) {
 	<script>
 		if (!window.jQuery) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
 	</script>
-	<script src="js/main.js"></script> <!-- Resource jQuery -->
+	<script src="js/schedule.js"></script> <!-- Resource jQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
 	</script>
