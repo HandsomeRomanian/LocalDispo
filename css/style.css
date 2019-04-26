@@ -443,6 +443,7 @@ Schedule Components
 
 .cd-schedule .single-event[data-event="class-2"],
 .cd-schedule [data-event="class-2"] .header-bg {
+  background: #513f63;
 }
 
 .cd-schedule .single-event[data-event="class-2"]:hover {
