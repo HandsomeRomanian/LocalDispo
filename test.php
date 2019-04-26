@@ -61,12 +61,45 @@
 		</header>
 
         <div class="grid-container">
-            <div class="border">
-
+            <div class="calendarSiderbar">
+					<p >8:00 </p>
+					<p >9:00 </p>
+					<p >10:00 </p>
+					<p >11:00 </p>
+					<p >12:00 </p>
+					<p >1:00 </p>
+					<p >2:00 </p>
+					<p >3:00 </p>
+					<p >4:00 </p>
+					<p >5:00 </p>
+					<p >6:00 </p>
+			</div>
+			<div class="calendarHeader">
+			
             </div>
             <div class="gridClass classDur1 classCol1" >
                 <a href="#0">
                     <em class="className">Test</em>
+                </a>
+            </div>
+            <div class="gridClass classDur1 classCol1" >
+                <a href="#0">
+                    <em class="className">2</em>
+                </a>
+            </div>
+            <div class="gridClass classDur1 classCol1" >
+                <a href="#0">
+                    <em class="className">3</em>
+                </a>
+            </div>
+            <div class="gridClass classDur1 classCol1" >
+                <a href="#0">
+                    <em class="className">4</em>
+                </a>
+            </div>
+            <div class="gridClass classDur1 classCol1" >
+                <a href="#0">
+                    <em class="className">5</em>
                 </a>
             </div>
         </div>
