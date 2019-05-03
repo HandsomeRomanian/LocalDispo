@@ -33,4 +33,9 @@ function checkFree($jours, $numeroLocal){
 
 }
 
+public function FunctionName(String $startTime,String $endTime)
+{
+        
+}
+
 ?>
