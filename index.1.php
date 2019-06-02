@@ -41,7 +41,7 @@ foreach ($json_output->Locals as $tmp) {
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg fixed-top " id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+			<a class="navbar-brand js-scroll-trigger" href="#page-top">Locals</a>
 			<button class="navbar-toggler navbar-toggler-right bg-primary text-white rounded" type="button"
 				data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
 				aria-expanded="false" aria-label="Toggle navigation">

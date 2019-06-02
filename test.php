@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="fr" xml:lang="fr" class="no-js">
 
@@ -81,7 +84,7 @@
                 <a href="#0">
                     <em class="className">Test</em>
                 </a>
-            </div>
+				http://localhost/53w5.php?local=603 </div>
             <div class="gridClass classDur1 classCol1" >
                 <a href="#0">
                     <em class="className">2</em>
