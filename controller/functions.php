@@ -29,11 +29,35 @@ function getDispo($jour, $numeroLocal){
     return $dispo;
 }
 
-function checkFree($jours, $numeroLocal){
-
+function checkFree($numeroLocal){
+    
+    if(date("N")-1<=6){
+        return true;
+    }
+    $json_output = json_decode(file_get_contents("json/local.json"));
+    $checkLocal = getLocalByNumero($numeroLocal);
+    $checkLocal = $checkLocal->Jours[date("N")-1];
+    $dispo = true;
+    foreach ($checkLocal->Cours as $checkCours) {
+        # code...
+        if($checkCours->Start <= date("H:i") && $checkCours->End >= date("H:i")){
+            $dispo = false;
+        }
+    }
+    return $dispo;
 }
 
-public function FunctionName(String $startTime,String $endTime)
+function getLocalByNumero($numeroLocal){
+
+    $json_output = json_decode(file_get_contents("json/local.json"));
+    foreach ($json_output->Locals as $tmp) {
+        if ($tmp->Emplacement == $numeroLocal){
+            return $tmp;
+        }
+    }
+}
+
+function FunctionName(String $startTime,String $endTime)
 {
         
 }

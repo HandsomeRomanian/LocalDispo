@@ -1,16 +1,6 @@
 <?php
 session_start();
-ob_start();
-require("controller/functions.php");
-$json_output = json_decode(file_get_contents("json/local.json"));
-$Local;
-$Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
-foreach ($json_output->Locals as $tmp) {
-    if ($tmp->Emplacement == $_GET["local"])
-    	$Local = $tmp;
-}
 ?>
-
 <!doctype html>
 <html lang="fr" xml:lang="fr" class="no-js">
 
@@ -19,34 +9,35 @@ foreach ($json_output->Locals as $tmp) {
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
 	<!-- Bootstrap core CSS -->
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-	<!-- Custom fonts for this template -->
-	<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="node_modules\@fortawesome\fontawesome-free\css\all.min.css" rel="stylesheet" type="text/css">
 
-	<!-- Plugin CSS -->
-	<link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
+
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400i,700i" rel="stylesheet" type="text/css"> -->
+
+
 
 	<!-- Custom styles for this template -->
-	<link href="css/freelancer.min.css" rel="stylesheet">
+	<!-- <link href="css/freelancer.min.css" rel="stylesheet"> -->
 
-	<!-- Resource style -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="css/fonts.css">
 
 	<title>Test dispso des locaux</title>
 </head>
 
 <body class="page-top">
 	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+	<nav class="navbar navbar-expand-lg fixed-top " id="mainNav">
 		<div class="container">
 			<a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
-			<button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button"
-			 data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-			 aria-label="Toggle navigation">
+			<button class="navbar-toggler navbar-toggler-right bg-primary text-white rounded" type="button"
+				data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+				aria-label="Toggle navigation">
 				Menu
 				<i class="fas fa-bars"></i>
 			</button>
@@ -66,113 +57,113 @@ foreach ($json_output->Locals as $tmp) {
 		</div>
 	</nav>
 
-	<section>
+	<main style="height: 100%" >
 		<header class="masthead">
-			<content>
-				<h1 class="text-center text-uppercase ">Titre</h1>
-				<?php //TEST AREA
-				
-					echo count($Local->Jours[2]->Cours);
-
-				?>
-				<h2 class="text-center font-weight-light mb-0">Web Developer - Graphic Artist - User Experience Designer</h2>
-			</content>
+			<h1 class="text-center text-uppercase ">D-6969</h1>
+			<h2 class="text-center font-weight-light mb-0"></h2>
 		</header>
 
-
-		<div class="cd-schedule loading">
-			<div class="timeline">
-				<ul>
-					<li><span>08:00</span></li>
-					<li><span>08:30</span></li>
-					<li><span>09:00</span></li>
-					<li><span>09:30</span></li>
-					<li><span>10:00</span></li>
-					<li><span>10:30</span></li>
-					<li><span>11:00</span></li>
-					<li><span>11:30</span></li>
-					<li><span>12:00</span></li>
-					<li><span>12:30</span></li>
-					<li><span>13:00</span></li>
-					<li><span>13:30</span></li>
-					<li><span>14:00</span></li>
-					<li><span>14:30</span></li>
-					<li><span>15:00</span></li>
-					<li><span>15:30</span></li>
-					<li><span>16:00</span></li>
-					<li><span>16:30</span></li>
-					<li><span>17:00</span></li>
-					<li><span>17:30</span></li>
-					<li><span>18:00</span></li>
-				</ul>
-			</div> <!-- .timeline -->
-
-			<div class="events">
-				<ul>
-
-					<?php for ($j=0; $j < 5; $j++) { ?>
-						<li class="events-group">
-							<div class="top-info">
-								<span>
-									<?php echo $Jours[$j];?>
-								</span>
-							</div>
-							<ul>
-							<?php $dispos = getDispo($j,$Local->Emplacement);
-							$section = 0;
-							 for ($i=0; $i < sizeof($dispos)-1; $i++) { 
-							?>
-								<li class="single-event" data-start="<?php if ($dispos[$i] == $dispos[$i+1]) echo $dispos[$i]?>" data-end="<?php $section+=1; $i+=1; echo $dispos[$i+1]?>" data-content="BD2" data-event="class-<?php 
-								if($section % 2 == 1){
-									echo "0";
-								}else{
-									echo "1";
-								}?>">
-									<a href="#0">
-										<em class="class-name">
-										<?php 
-										if($section % 2 == 1){
-											echo "Disponible";
-										}else{
-											echo "Occupe";
-										}?></em>
-									</a>
-								</li>
-							<?php
-							}
-							?>
-							</ul>
-						</li>
-
-					<?php
-					}
-					?>
-
-				</ul>
+        <div class="grid-container">
+            <div class="calendarSiderbar">
+					<p >8:00 </p>
+					<p >9:00 </p>
+					<p >10:00 </p>
+					<p >11:00 </p>
+					<p >12:00 </p>
+					<p >1:00 </p>
+					<p >2:00 </p>
+					<p >3:00 </p>
+					<p >4:00 </p>
+					<p >5:00 </p>
+					<p >6:00 </p>
 			</div>
-			<div class="class-modal">
-				<header class="header">
-					<div class="content">
-						<span class="class-date"></span>
-						<h3 class="class-name"></h3>
-					</div>
+			<div class="calendarHeader">
+			
+            </div>
+            <div class="gridClass classDur1 classCol1" >
+                <a href="#0">
+                    <em class="className">Test</em>
+                </a>
+				http://localhost/53w5.php?local=603 </div>
+            <div class="gridClass classDur1 classCol1" >
+                <a href="#0">
+                    <em class="className">2</em>
+                </a>
+            </div>
+            <div class="gridClass classDur1 classCol1" >
+                <a href="#0">
+                    <em class="className">3</em>
+                </a>
+            </div>
+            <div class="gridClass classDur1 classCol1" >
+                <a href="#0">
+                    <em class="className">4</em>
+                </a>
+            </div>
+            <div class="gridClass classDur1 classCol1" >
+                <a href="#0">
+                    <em class="className">5</em>
+                </a>
+            </div>
+        </div>
 
-					<div class="header-bg"></div>
-				</header>
+	</main>
 
-				<div class="body">
-					<div class="class-info">Error: content not found.</div>
-					<div class="body-bg"></div>
+	<!-- Footer -->
+	<footer class="footer text-center">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 mb-5 mb-lg-0">
+					<h4 class="text-uppercase mb-4">Location</h4>
+					<p class="lead mb-0">Montreal
+						<br>Quebec, Canada</p>
 				</div>
+				<div class="col-md-4 mb-5 mb-lg-0">
+					<h4 class="text-uppercase mb-4">Around the Web</h4>
 
-				<a href="#0" class="close">Close</a>
+					<a href="#" class="fab fa-facebook"></a>
+					<a href="#" class="fab fa-twitter"></a>
+					<a href="#" class="fab fa-github"></a>
+
+				</div>
+				<div class="col-md-4">
+					<h4 class="text-uppercase mb-4">Open Classroom Schedule</h4>
+					<p class="lead mb-0">WIP uncompleted design.</p>
+				</div>
 			</div>
+		</div>
 
-			<div class="cover-layer"></div>
+		<div class="copyright text-center text-white">
+			<div class="container">
+				<p>Copyright &copy; Matei Martin 2019</p>
+			</div>
+		</div>
+	</footer>
 
-		</div> <!-- .cd-schedule -->
-	</section>
 
-<?php
-include "includes/footer.php" ;
-?>
+	<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+	<div class="scroll-to-top d-lg-none position-fixed ">
+		<a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+			<i class="fa fa-chevron-up"></i>
+		</a>
+	</div>
+
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script>
+		if (!window.jQuery) document.write('<script src="js/jquery-3.0.0.min.js"><\/script>');
+	</script>
+	<script src="js/schedule.js"></script> <!-- Resource jQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+	</script>
+</body>
+
+</html>
