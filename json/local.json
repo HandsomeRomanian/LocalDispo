@@ -1,6 +1,21 @@
 {
     "Locals" : [
         {
+            "Emplacement" : "000",
+            "Jours" : [
+                { 
+                },
+                {
+                },
+                {
+                },
+                {
+                },
+                {
+                }
+            ]
+        },
+        {
             "Emplacement" : "602",
             "Jours" : [
                 { 

@@ -3,9 +3,10 @@ session_start();
 ob_start();
 include("controller\\functions.php");
 $json_output = json_decode(file_get_contents("json/local.json"));
-$Local = 602;
 $Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
 foreach ($json_output->Locals as $tmp) {
+	if ($tmp->Emplacement == "0000")
+		$Local = $tmp;
 	if ($tmp->Emplacement == $_GET["local"])
 		$Local = $tmp;
 }
