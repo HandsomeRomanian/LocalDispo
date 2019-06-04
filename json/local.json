@@ -1,7 +1,7 @@
 {
     "Locals" : [
         {
-            "Emplacement" : "000",
+            "Emplacement" : "0000",
             "Jours" : [
                 { 
                 },
@@ -16,7 +16,7 @@
             ]
         },
         {
-            "Emplacement" : "602",
+            "Emplacement" : "0602",
             "Jours" : [
                 { 
                     "Cours" : [
@@ -104,7 +104,7 @@
             ]
         },
         {
-            "Emplacement" : "603",
+            "Emplacement" : "0603",
             "Jours" : [
                 { 
                     "Cours" : [

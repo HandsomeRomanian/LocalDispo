@@ -65,42 +65,45 @@ session_start();
 
         <div class="grid-container">
             <div class="calendarSiderbar">
-					<p >8:00 </p>
-					<p >9:00 </p>
+					<p >08:00 </p>
+					<p >09:00 </p>
 					<p >10:00 </p>
 					<p >11:00 </p>
 					<p >12:00 </p>
-					<p >1:00 </p>
-					<p >2:00 </p>
-					<p >3:00 </p>
-					<p >4:00 </p>
-					<p >5:00 </p>
-					<p >6:00 </p>
+					<p >01:00 </p>
+					<p >02:00 </p>
+					<p >03:00 </p>
+					<p >04:00 </p>
+					<p >05:00 </p>
+					<p >06:00 </p>
 			</div>
-			<div class="calendarHeader">
-			
-            </div>
-            <div class="gridClass classDur1 classCol1" >
+				<div class="gridDay"><!--TIME PLACEHOLDER THIS SHOULD REMAIN EMPTY--></div>
+				<div class="gridDay">Lundi</div>
+				<div class="gridDay">Mardi</div>
+				<div class="gridDay">Mercredi</div>
+				<div class="gridDay">Jeudi</div>
+				<div class="gridDay">Vendredi</div>
+            <div class="gridClass classDay1 classDur1 classCol1" >
                 <a href="#0">
                     <em class="className">Test</em>
                 </a>
-				http://localhost/53w5.php?local=603 </div>
-            <div class="gridClass classDur1 classCol1" >
+			</div>
+            <div class="gridClass classStart0800 classDay2 classDur3 classCol1" >
                 <a href="#0">
                     <em class="className">2</em>
                 </a>
             </div>
-            <div class="gridClass classDur1 classCol1" >
+            <div class="gridClass  classStart0800 classDay3 classDur1 classCol1" >
                 <a href="#0">
                     <em class="className">3</em>
                 </a>
             </div>
-            <div class="gridClass classDur1 classCol1" >
+            <div class="gridClass classDay4 classDur1 classCol1" >
                 <a href="#0">
                     <em class="className">4</em>
                 </a>
             </div>
-            <div class="gridClass classDur1 classCol1" >
+            <div class="gridClass classDay5 classDur1 classCol1" >
                 <a href="#0">
                     <em class="className">5</em>
                 </a>
