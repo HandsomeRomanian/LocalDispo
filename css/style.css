@@ -122,9 +122,23 @@ footer>div>div>div>h4{
   text-align: center;
 }
 
-.classStart0800{
+.classStart0{
   grid-row: 3;
-  grid-row-end: span 1;
+}
+.classStart1{
+  grid-row: 4;
+}
+.classStart2{
+  grid-row: 5;
+}
+.classStart3{
+  grid-row: 6;
+}
+.classStart4{
+  grid-row: 7;
+}
+.classStart5{
+  grid-row: 8;
 }
 
 .classDay1{

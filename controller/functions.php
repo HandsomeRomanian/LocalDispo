@@ -57,9 +57,15 @@ function getLocalByNumero($numeroLocal){
     }
 }
 
+function getDuration($start, $end){
+    if($start > $end){
+        $end+=12;
+    }
+    return ($end-$start);
+}
+
 function FunctionName(String $startTime,String $endTime)
 {
         
 }
-
 ?>

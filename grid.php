@@ -1,6 +1,5 @@
 <?php
 session_start();
-ob_start();
 include("controller\\functions.php");
 $json_output = json_decode(file_get_contents("json/local.json"));
 $Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
@@ -10,8 +9,6 @@ foreach ($json_output->Locals as $tmp) {
 	if ($tmp->Emplacement == $_GET["local"])
 		$Local = $tmp;
 }
-
-
 ?>
 <!doctype html>
 <html lang="fr" xml:lang="fr" class="no-js">
@@ -20,13 +17,17 @@ foreach ($json_output->Locals as $tmp) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-
-
 	<!-- Bootstrap core CSS -->
+
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link href="node_modules\@fortawesome\fontawesome-free\css\all.min.css" rel="stylesheet" type="text/css">
+
+
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,400i,700i" rel="stylesheet" type="text/css"> -->
+
 
 
 	<!-- Custom styles for this template -->
@@ -42,10 +43,10 @@ foreach ($json_output->Locals as $tmp) {
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg fixed-top " id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">Locals</a>
+			<a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
 			<button class="navbar-toggler navbar-toggler-right bg-primary text-white rounded" type="button"
-				data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-				aria-expanded="false" aria-label="Toggle navigation">
+				data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+				aria-label="Toggle navigation">
 				Menu
 				<i class="fas fa-bars"></i>
 			</button>
@@ -65,87 +66,78 @@ foreach ($json_output->Locals as $tmp) {
 		</div>
 	</nav>
 
-	<main>
+	<main style="height: 100%" >
 		<header class="masthead">
-			<h1 class="text-center text-uppercase ">D-<?php echo $Local->Emplacement ?></h1>
+			<h1 class="text-center text-uppercase ">D-6969</h1>
 			<h2 class="text-center font-weight-light mb-0"></h2>
 		</header>
 
-
-		<div class="cd-schedule loading">
-			<div class="timeline">
-				<ul>
-					<li><span>08:10</span></li>
-					<li><span>08:40</span></li>
-					<li><span>09:10</span></li>
-					<li><span>09:40</span></li>
-					<li><span>10:10</span></li>
-					<li><span>10:40</span></li>
-					<li><span>11:10</span></li>
-					<li><span>11:40</span></li>
-					<li><span>12:10</span></li>
-					<li><span>12:40</span></li>
-					<li><span>13:10</span></li>
-					<li><span>13:40</span></li>
-					<li><span>14:10</span></li>
-					<li><span>14:40</span></li>
-					<li><span>15:10</span></li>
-					<li><span>15:40</span></li>
-					<li><span>16:10</span></li>
-					<li><span>16:40</span></li>
-					<li><span>17:10</span></li>
-					<li><span>17:40</span></li>
-					<li><span>18:00</span></li>
-				</ul>
-			</div> <!-- .timeline -->
-
-			<div class="events">
-				<ul>
-
-					<?php
-                	for ($i=0; $i < 5; $i++) { ?>
-					<li class="events-group">
-						<div class="top-info"><span><?php echo $Jours[$i];?></span></div>
-						<ul>
-							<?php
-						foreach ($Local->Jours[$i]->Cours as $cours){
-								?>
-							<li class="single-event" data-start="<?php echo $cours->Start ?>"
-								data-end="<?php echo $cours->End ?>" data-content="prog2"
-								data-event="class-<?php echo $cours->ID;?>">
-								<a href="#0">
-									<em class="class-name"><?php echo $cours->Nom ?></em>
-								</a>
-							</li>
-							<?php
-						}
-						echo "</ul></li>";
+        <div class="grid-container">
+            <div class="calendarSiderbar">
+					<p >08:00 </p>
+					<p >09:00 </p>
+					<p >10:00 </p>
+					<p >11:00 </p>
+					<p >12:00 </p>
+					<p >01:00 </p>
+					<p >02:00 </p>
+					<p >03:00 </p>
+					<p >04:00 </p>
+					<p >05:00 </p>
+					<p >06:00 </p>
+			</div>
+			<div class="gridDay"><!--TIME PLACEHOLDER THIS SHOULD REMAIN EMPTY--></div>
+			<div class="gridDay">Lundi</div>
+			<div class="gridDay">Mardi</div>
+			<div class="gridDay">Mercredi</div>
+			<div class="gridDay">Jeudi</div>
+			<div class="gridDay">Vendredi</div>
+			<?php
+				for ($i=1; $i < 6; $i++) { 
+					
+					foreach ($Local->Jours[$i]->Cours as $cours){
+							?>
+						<div class="gridClass 
+						classDay<?php echo $i;?> 
+						classCol<?php echo $cours->ID;?>
+						classStart<?php ?>
+						"
+						style=" 
+  						grid-row-end: span <?php echo getDuration($cours->Start,$cours->End) ?>;
+						">
+								<p class="class-name"><?php echo $cours->Nom ?></p>
+						</div>
+						<?php
+					}
 				}
-				?>
-						</ul>
+			?>
+            <div class="gridClass classDay1 classDur1 classCol1" >
+                <a href="#0">
+                    <em class="className">Test</em>
+                </a>
 			</div>
+            <div class="gridClass classStart0 classDay2 classDur3 classCol1" >
+                <a href="#0">
+                    <em class="className">2</em>
+                </a>
+            </div>
+            <div class="gridClass  classStart1 classDay3 classDur1 classCol1" >
+                <a href="#0">
+                    <em class="className">3</em>
+                </a>
+            </div>
+            <div class="gridClass classStart2 classDay4 classDur1 classCol1" >
+                <a href="#0">
+                    <em class="className">4</em>
+                </a>
+            </div>
+            <div class="gridClass classStart5 classDay5 classDur1 classCol1" >
+                <a href="#0">
+                    <em class="className">5</em>
+                </a>
+            </div>
+        </div>
 
-			<div class="class-modal">
-				<div class="header">
-					<div class="content">
-						<span class="class-date"></span>
-						<h3 class="class-name"></h3>
-					</div>
-
-					<div class="header-bg"></div>
-				</div>
-
-				<div class="body">
-					<div class="class-info">Error: content not found.</div>
-					<div class="body-bg"></div>
-				</div>
-
-				<a href="#0" class="close"></a>
-			</div>
-
-			<div class="cover-layer"></div>
-
-		</div> <!-- .cd-schedule -->
 	</main>
 
 	<!-- Footer -->
