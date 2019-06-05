@@ -1,5 +1,4 @@
 <?php
-$Jours;
 $Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
 
 function getDispo($jour, $numeroLocal){

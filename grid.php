@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("controller\\functions.php");
+include("controller/functions.php");
 $json_output = json_decode(file_get_contents("json/local.json"));
 $Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
 foreach ($json_output->Locals as $tmp) {
@@ -100,18 +100,18 @@ foreach ($json_output->Locals as $tmp) {
 						<div class="gridClass 
 						classDay<?php echo $i;?> 
 						classCol<?php echo $cours->ID;?>
-						classStart<?php ?>
+						classStart<?php echo $cours->Start-7?>
 						"
 						style=" 
-  						grid-row-end: span <?php echo getDuration($cours->Start,$cours->End) ?>;
+  						grid-row-end: span <?php echo getDuration($cours->Start,$cours->End); ?>;
 						">
-								<p class="class-name"><?php echo $cours->Nom ?></p>
+								<p class="class-name"><?php echo $cours->Nom;echo getDuration($cours->Start,$cours->End); ?></p>
 						</div>
 						<?php
 					}
 				}
 			?>
-            <div class="gridClass classDay1 classDur1 classCol1" >
+            <!-- <div class="gridClass classDay1 classDur1 classCol1" >
                 <a href="#0">
                     <em class="className">Test</em>
                 </a>
@@ -135,7 +135,7 @@ foreach ($json_output->Locals as $tmp) {
                 <a href="#0">
                     <em class="className">5</em>
                 </a>
-            </div>
+            </div> -->
         </div>
 
 	</main>
