@@ -93,19 +93,21 @@ foreach ($json_output->Locals as $tmp) {
 			<div class="gridDay">Jeudi</div>
 			<div class="gridDay">Vendredi</div>
 			<?php
-				for ($i=1; $i < 6; $i++) { 
+				for ($i=0; $i < 6; $i++) { 
 					
 					foreach ($Local->Jours[$i]->Cours as $cours){
 							?>
 						<div class="gridClass 
-						classDay<?php echo $i;?> 
+						classDay<?php echo $i+1;?> 
 						classCol<?php echo $cours->ID;?>
-						classStart<?php echo $cours->Start-7?>
+						classStart<?php echo $cours->Start-8;?>
 						"
 						style=" 
   						grid-row-end: span <?php echo getDuration($cours->Start,$cours->End); ?>;
 						">
-								<p class="class-name"><?php echo $cours->Nom;echo getDuration($cours->Start,$cours->End); ?></p>
+								<p class="classTime"><?php echo $cours->Start." - ".$cours->End; ?></p>
+						
+								<p class="className"><?php echo $cours->Nom.getDuration($cours->Start,$cours->End); ?></p>
 						</div>
 						<?php
 					}

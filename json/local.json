@@ -24,7 +24,7 @@
                             "Nom" : "Réseau 1",
                             "Prof" : "Gendron, É.",
                             "Start" : "15:10",
-                            "End" : "18:10",
+                            "End" : "18:00",
                             "ID" : "2"
                         }
                     ]
@@ -35,14 +35,7 @@
                             "Nom" : "Réseau 1",
                             "Prof" : "Akkouche, A.",
                             "Start" : "08:10",
-                            "End" : "11:10",
-                            "ID" : "2"
-                        },
-                        {
-                            "Nom" : "Réseau 1",
-                            "Prof" : "Akkouche, A.",
-                            "Start" : "08:10",
-                            "End" : "11:10",
+                            "End" : "11:00",
                             "ID" : "2"
                         }
                     ]
@@ -53,14 +46,14 @@
                             "Nom" : "Réseau 1",
                             "Prof" : "Akkouche, A.",
                             "Start" : "09:10",
-                            "End" : "12:10",
+                            "End" : "12:00",
                             "ID" : "2"
                         },
                         {
                             "Nom" : "Réseau 1",
                             "Prof" : "Akkouche, A.",
                             "Start" : "14:10",
-                            "End" : "17:10",
+                            "End" : "17:00",
                             "ID" : "2"
                         }
                     ]
@@ -71,21 +64,21 @@
                             "Nom" : "Surv et sécu. 1",
                             "Prof" : "Bustillo, H",
                             "Start" : "08:10",
-                            "End" : "10:10",
+                            "End" : "10:00",
                             "ID" : "3"
                         },
                         {
                             "Nom" : "Surv et sécu. 1",
                             "Prof" : "Bustillo, H",
                             "Start" : "10:10",
-                            "End" : "13:10",
+                            "End" : "13:00",
                             "ID" : "3"
                         },
                         {
                             "Nom" : "Réseau 1",
                             "Prof" : "Gendron, É.",
                             "Start" : "13:10",
-                            "End" : "15:10",
+                            "End" : "15:00",
                             "ID" : "2"
                         }
                     ]
@@ -96,7 +89,7 @@
                             "Nom" : "Réseau 1",
                             "Prof" : "Akkouche, A.",
                             "Start" : "08:10",
-                            "End" : "10:10",
+                            "End" : "10:00",
                             "ID" : "2"
                         }
                     ]
@@ -112,21 +105,21 @@
                             "Nom" : "Programmation o.",
                             "Prof" : "Zoubeidi, M",
                             "Start" : "08:10",
-                            "End" : "11:10",
+                            "End" : "11:00",
                             "ID" : "3"
                         },
                         {
                             "Nom" : "Programmation o.",
                             "Prof" : "Gammoudi, J",
                             "Start" : "12:10",
-                            "End" : "15:10",
+                            "End" : "15:00",
                             "ID" : "3"
                         },
                         {
                             "Nom" : "BD 2",
                             "Prof" : "Vallière, C",
                             "Start" : "15:10",
-                            "End" : "18:10",
+                            "End" : "18:00",
                             "ID" : "4"
                         }
                     ]
@@ -137,14 +130,14 @@
                             "Nom" : "App OO",
                             "Prof" : "Deguet, J.",
                             "Start" : "12:10",
-                            "End" : "15:10",
+                            "End" : "15:00",
                             "ID" : "5"
                         },
                         {
                             "Nom" : "App OO",
                             "Prof" : "Deguet, J.",
                             "Start" : "15:10",
-                            "End" : "18:10",
+                            "End" : "18:00",
                             "ID" : "5"
                         }
                     ]
@@ -155,14 +148,14 @@
                             "Nom" : "BD 2",
                             "Prof" : "Vallières, C.",
                             "Start" : "09:10",
-                            "End" : "12:10",
+                            "End" : "12:00",
                             "ID" : "4"
                         },
                         {
                             "Nom" : "BD 2",
                             "Prof" : "Vallières, C.",
                             "Start" : "14:10",
-                            "End" : "17:10",
+                            "End" : "17:00",
                             "ID" : "4"
                         }
                     ]
@@ -173,21 +166,21 @@
                             "Nom" : "Programmation o.",
                             "Prof" : "Zoubeidi, M",
                             "Start" : "08:10",
-                            "End" : "11:10",
+                            "End" : "11:00",
                             "ID" : "3"
                         },
                         {
                             "Nom" : "Programmation o",
                             "Prof" : "DesMeules, S.",
                             "Start" : "12:10",
-                            "End" : "15:10",
+                            "End" : "15:00",
                             "ID" : "3"
                         },
                         {
                             "Nom" : "Programmation o.",
                             "Prof" : "Gammoudi, J",
-                            "Start" : "15:10",
-                            "End" : "18:10",
+                            "Start" : "15:00",
+                            "End" : "18:00",
                             "ID" : "3"
                         }
                     ]
@@ -198,7 +191,7 @@
                             "Nom" : "App OO",
                             "Prof" : "Deguet, J.",
                             "Start" : "12:10",
-                            "End" : "15:10",
+                            "End" : "15:00",
                             "ID" : "5"
                         }
                     ]

@@ -2,6 +2,6 @@
 
 include("controller/functions.php");
 
-echo getDuration("09:00","01:00");
+echo "18:10" - 7;
  
 ?>
