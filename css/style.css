@@ -102,10 +102,18 @@ footer>div>div>div>h4{
   text-align: center;
 }
 
+
 .calendarSiderbar p{
-  height: 9%;
+  height: 10%;
   justify-content: left;
-  margin-bottom: 25%;
+}
+
+.calendarSiderbar p::before {
+  width: 2100%;
+  height: 2%;
+  background-color: #5050505d;
+  display: block;
+  content:"";
 }
 
 .gridClass{
