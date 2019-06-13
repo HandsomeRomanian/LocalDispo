@@ -1,22 +1,22 @@
 CREATE TABLE Cours(
-	coursID INT PRIMARY KEY NOT NULL,
+	coursID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     courseName varchar(50) NOT NULL,
     courseCode varchar(50) NOT NULL,
     courseInfo varchar(250)
 );
 
 CREATE TABLE Roles(
-    roleID INT PRIMARY KEY NOT NULL,
+    roleID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     roleName VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE RoomType(
-    typeID INT PRIMARY KEY NOT NULL,
+    typeID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     typeName VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE Account(
-    accountID INT PRIMARY KEY,
+    accountID INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(50) NOT NULL,
     password VARCHAR(255) NOT NULL,
     roleID INT NOT NULL
@@ -26,7 +26,7 @@ ALTER TABLE Account
 ADD CONSTRAINT FK_Account_roleID FOREIGN KEY (roleID) REFERENCES Roles(roleID); 
 
 CREATE TABLE Groupe(
-    groupID INT PRIMARY KEY NOT NULL,
+    groupID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     groupNumber varchar(5) NOT NULL,
     coursID INT NOT NULL
 );
@@ -35,7 +35,7 @@ ALTER TABLE Groupe
 ADD CONSTRAINT FK_Groupe_coursID FOREIGN KEY (coursID) REFERENCES Cours(coursID); 
 
 CREATE TABLE Student(
-    studentID INT PRIMARY KEY NOT NULL,
+    studentID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     studentNumber INT,
     studentName VARCHAR(50) NOT NULL,
     studentFName VARCHAR(50) NOT NULL,
@@ -48,7 +48,7 @@ ALTER TABLE Student
 ADD CONSTRAINT FK_Student_accountID FOREIGN KEY (accountID) REFERENCES Account(accountID); 
 
 CREATE TABLE Teacher(
-    teacherID INT PRIMARY KEY NOT NULL,
+    teacherID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     teacherName VARCHAR(50) NOT NULL,
     teacherFName VARCHAR(50) NOT NULL,
     accountID INT
@@ -68,7 +68,7 @@ ALTER TABLE GroupStudent
 ADD FOREIGN KEY (groupID) REFERENCES Groupe(groupID);
 
 CREATE TABLE Room(
-    roomID INT PRIMARY KEY NOT NULL,
+    roomID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     wing CHAR NOT NULL,
     floor INT NOT NULL,
     number INT NOT NULL,
@@ -80,7 +80,7 @@ ALTER TABLE Room
 ADD CONSTRAINT FK_Room_typeID FOREIGN KEY (typeID) REFERENCES RoomType(typeID);
 
 CREATE TABLE Class(
-    classID INT PRIMARY KEY NOT NULL,
+    classID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     startTime TIME NOT NULL,
     endTime TIME,
     roomID INT NOT NULL,
@@ -97,3 +97,4 @@ ALTER TABLE Class
 ADD CONSTRAINT FK_Class_teacherID FOREIGN KEY (teacherID) REFERENCES Teacher(teacherID);
 ALTER TABLE Class
 ADD CONSTRAINT FK_Class_groupID FOREIGN KEY (groupID) REFERENCES Groupe(groupID); 
+
