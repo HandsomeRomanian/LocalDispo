@@ -1,6 +1,6 @@
 <?php
 
-include("controller/functions.php");
+require_once("controller/functions.php");
 $json_output = json_decode(file_get_contents("json/local.json"));
  
 echo '{"Locals" : [';

@@ -10,7 +10,6 @@ class User {
 	}
  
 	function getName() {
-		return "test";
 		return $this->name;
 	}
  
