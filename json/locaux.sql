@@ -489,7 +489,7 @@ ALTER TABLE `Teacher`
 
 
 CREATE UNIQUE INDEX IX_Groupe_groupNumbercoursID
-ON `Groupe`(groupeNumber,coursID);
+ON `Groupe`(groupNumber,coursID);
 
 CREATE UNIQUE INDEX IX_Teacher_accountID
 ON `Teacher`(accountID);
@@ -506,12 +506,12 @@ CREATE UNIQUE INDEX IX_Student_accountID
 ON `Student`(accountID);
 CREATE UNIQUE INDEX IX_Student_accountName
 ON `Student`(accountName);
-
+'
 CREATE UNIQUE INDEX IX_RoomType_typeName
 ON `RoomType`(typeName);
 
 CREATE UNIQUE INDEX IX_Room_windfloornumber
-ON `Room`('wing','floor','number');
+ON `Room` ('wing','floor','number');
 
 CREATE UNIQUE INDEX IX_Roles_roleName
 ON `Roles`(roleName);
