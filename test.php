@@ -3,7 +3,8 @@
 require_once("controller/functions.php");
 $json_output = json_decode(file_get_contents("json/local.json"));
  
-echo '{"Locals" : [';
+echo '{
+    "Locals": [';
     foreach ($json_output->Locals as $tmp) {
         echo '{ <br>"Emplacement" : '.$tmp->Emplacement.',<br>"Jours" : [';
             for ($i=0; $i < 5; $i++) { 
