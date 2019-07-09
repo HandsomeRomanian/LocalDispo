@@ -1,15 +1,12 @@
 
 /* -------------------------------- 
-
-Primary style
-
+General Stuff
 -------------------------------- */
 *, *::after, *::before {
   box-sizing: border-box;
 }
 
 body {
-  height:100%;
   font-family: "Source Sans Pro", sans-serif;
   color: #222222;
   background-color: white;
@@ -20,8 +17,20 @@ main{
   margin-bottom:12rem;
 }
 
+a {
+  color: #f9b45f;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f9b45f;
+  text-decoration: none;
+}
+/*
+NavBar
+*/
 #mainNav{
-  background-color: #2b2d42;
+  background-color: #1c448e;
   font-family: 'Montserrat';
   font-weight: bold;
 }
@@ -30,27 +39,11 @@ main{
   font-size: 2rem;
 }
 
-a {
-  color: #8d99ae;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #f9b45f;
-  text-decoration: none;
-}
-
-.mediaIcons i{
-  width: 1em;
-}
-
-header>h1{
-  font-weight: bold;
-  font-size: 6rem;
-}
-
+/*
+Footer
+*/
 footer{
-  background-color: #2b2d42;
+  background-color: #1c448e;
   padding: 10px;
   text-align: center;
   padding-top:2.6rem;
@@ -58,6 +51,10 @@ footer{
   color: #8d99ae;
   font-family: 'Montserrat';
   font-weight: bold !important; 
+}
+
+.mediaIcons i{
+  width: 1em;
 }
 
 footer>div>div>div>h4{
@@ -77,7 +74,18 @@ footer>div>div>div>h4{
   margin-bottom:0px;
   padding-top:1.6rem;
 }
+/*
+General Stylings
+*/
 
+header>h1{
+  font-weight: bold;
+  font-size: 6rem;
+}
+
+/*
+Calendar Section.
+*/
 .grid-container {
   display: grid;
   height: 1000px;
@@ -225,4 +233,17 @@ footer>div>div>div>h4{
 }
 .classCol5{
   background: #2dc2bd;
+}
+
+/*
+Free classes layout (class list layout)
+*/
+.curentlyDispo{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.soonDispo{
+  display: flex;
+  flex-wrap: wrap;
 }
