@@ -67,12 +67,16 @@ foreach ($json_output->Locals as $tmp) {
 			<h2 class="text-center font-weight-light mb-0"></h2>
 		</header>
 
-        <div class="curentlyDispo">
-	
-        </div>
-        <div class="soonDispo">
+		<div class="curentlyDispo">
+			<div class="freeClass classCol1">
+				<p class="className">D-0604</p>
+				
+				<p class="classInfo">Jusqu'a <span style="font-size: 1rem;">10h</span></p>
+			</div>
+		</div>
+		<div class="soonDispo">
 
-        </div>
+		</div>
 
 	</main>
 
