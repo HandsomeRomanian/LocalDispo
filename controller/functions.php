@@ -28,17 +28,14 @@ function getDispo($jour, $numeroLocal){
     return $dispo;
 }
 
-function checkFree($numeroLocal){
+function checkFree($Local){
     
-    if(date("N")-1<=6){
+    if(date("N")-1>=5){
         return true;
     }
-    $json_output = json_decode(file_get_contents("json/local.json"));
-    $checkLocal = getLocalByNumero($numeroLocal);
-    $checkLocal = $checkLocal->Jours[date("N")-1];
+    $checkLocal = $Local->Jours[date("N")-1];
     $dispo = true;
     foreach ($checkLocal->Cours as $checkCours) {
-        # code...
         if($checkCours->Start <= date("H:i") && $checkCours->End >= date("H:i")){
             $dispo = false;
         }
@@ -63,8 +60,20 @@ function getDuration($start, $end){
     return ($end-$start);
 }
 
-function FunctionName(String $startTime,String $endTime)
+function nextClassTime($Local)
 {
-        
+  $day = date("N")-1;
+  $time = date("H:i");
+  foreach ($Local->Jours[$day]->Cours as $key) {
+      if($time < $key->Start){
+          return $key->Start;
+      }
+  }
+  $day++;
+  foreach ($Local->Jours[$day]->Cours as $key) {
+          return '00:00';
+  }
+
+
 }
 ?>

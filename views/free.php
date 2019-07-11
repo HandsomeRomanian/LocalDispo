@@ -16,25 +16,6 @@ foreach ($json_output->Locals as $tmp) {
 	}
 }
 ?>
-
-<?php
-session_start();
-require_once("../includes/mobilecheck.php");
-require_once("../controller/functions.php");
-$json_output = json_decode(file_get_contents("../json/local.json"));
-$Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
-$numLocal = '0000';
-foreach ($json_output->Locals as $tmp) {
-	if ($tmp->Emplacement == $_GET["local"]){
-		$Local = $tmp;
-		$numLocal = $Local->Emplacement;
-		$numLocal = substr($numLocal,1);
-	}
-	if ($Local->Emplacement == ''){
-		$numLocal = 'Error';
-	}
-}
-?>
 <!doctype html>
 <html lang="fr" xml:lang="fr" class="no-js">
 
@@ -62,26 +43,47 @@ foreach ($json_output->Locals as $tmp) {
 	<?php include("../includes/nav.php"); ?>
 
 	<main>
-		<header class="masthead">
-			<h1 class="text-center text-uppercase "><?php echo $numLocal ?></h1>
-			<h2 class="text-center font-weight-light mb-0"></h2>
-		</header>
 
+		<header class="freeTitle">Curently Free</header><br>
 		<div class="curentlyDispo">
-			<div class="freeClass classCol1">
-				<p class="className">D-0604</p>
-				
-				<p class="classInfo">Jusqu'a <span style="font-size: 1rem;">10h</span></p>
-			</div>
-		</div>
-		<div class="soonDispo">
+			<?php 
+				foreach ($json_output->Locals as $tmp) {
+					if(checkFree($tmp)){
+						echo '<div class="freeClass classCol1">';
+						echo '<p class="className">'.$tmp->Emplacement.'</p>';
+						if( nextClassTime($tmp) == '00:00'){
+							$temp = 'tomorrow.';
+						}
+						else{
+							$temp = nextClassTime($tmp);
+						}
 
+						echo '<p class="classInfo">Until <span style="font-size: 1rem;">'.$temp.' </span></p>';
+						echo '</div>';
+					}
+				}
+			?>
+		</div>
+		<header class="freeTitle">Soon Free</header><br>
+		<div class="soonDispo">
+			<?php 
+				foreach ($json_output->Locals as $tmp) {
+					if (!checkFree($tmp)){
+						echo '<div class="freeClass classCol1">';
+						echo '<p class="className">'.$tmp->Emplacement.'</p>';
+						echo '<p class="classInfo">In <span style="font-size: 1rem;">'.checkFree($tmp->Emplacement).' </span> hours.</p>';
+						echo '</div>';
+
+					}
+				}
+			?>
 		</div>
 
 	</main>
 
 
 	<?php include("../includes/footer.php"); ?>
+
 
 
 
