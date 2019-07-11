@@ -17,7 +17,7 @@ foreach ($json_output->Locals as $tmp) {
 }
 ?>
 <!doctype html>
-<html lang="fr" xml:lang="fr" class="no-js">
+<html lang="en" xml:lang="en" class="no-js">
 
 <head>
 	<meta charset="UTF-8">
@@ -50,7 +50,9 @@ foreach ($json_output->Locals as $tmp) {
 				foreach ($json_output->Locals as $tmp) {
 					if(checkFree($tmp)){
 						echo '<div class="freeClass classCol1">';
-						echo '<p class="className">'.$tmp->Emplacement.'</p>';
+						echo '<p class="className"> ';
+						echo formatLocal($tmp);
+						echo '</p>';
 						if( nextClassTime($tmp) == '00:00'){
 							$temp = 'tomorrow.';
 						}
@@ -68,9 +70,11 @@ foreach ($json_output->Locals as $tmp) {
 		<div class="soonDispo">
 			<?php 
 				foreach ($json_output->Locals as $tmp) {
-					if (!checkFree($tmp)){
+					if (!checkFree($tmp) ){
 						echo '<div class="freeClass classCol1">';
-						echo '<p class="className">'.$tmp->Emplacement.'</p>';
+						echo '<p class="className"> ';
+						echo formatLocal($tmp);
+						echo '</p>';
 						echo '<p class="classInfo">In <span style="font-size: 1rem;">'.checkFree($tmp->Emplacement).' </span> hours.</p>';
 						echo '</div>';
 

@@ -53,6 +53,12 @@ function getLocalByNumero($numeroLocal){
     }
 }
 
+function formatLocal($Local){
+//this is temporary code.
+    $numeroLocal = substr($Local->Emplacement,1);
+    echo 'D-'.$numeroLocal;
+}
+
 function getDuration($start, $end){
     if($start > $end){
         $end+=12;
@@ -60,8 +66,7 @@ function getDuration($start, $end){
     return ($end-$start);
 }
 
-function nextClassTime($Local)
-{
+function nextClassTime($Local){
   $day = date("N")-1;
   $time = date("H:i");
   foreach ($Local->Jours[$day]->Cours as $key) {
@@ -73,7 +78,8 @@ function nextClassTime($Local)
   foreach ($Local->Jours[$day]->Cours as $key) {
           return '00:00';
   }
-
-
 }
+
+
+
 ?>
