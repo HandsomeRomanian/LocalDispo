@@ -80,6 +80,23 @@ function nextClassTime($Local){
   }
 }
 
+function nextClassColor($Local){
+    $nextClassTime = nextClassTime($Local);
+    $diff = $nextClassTime - date("Hi");
+
+    if ($diff < 11){
+        return '1';
+    }
+
+    if ($diff < 31){
+        return '2';
+    }
+
+    if ($diff < 60){
+        return '3';
+    }
+}
+
 
 
 ?>

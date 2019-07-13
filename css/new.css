@@ -225,6 +225,15 @@ Calendar Section.
   grid-row-end: span 5;
 }
 
+.classCol-3{
+  background: #e42020;
+}
+.classCol-2{
+  background: #f5b133;
+}
+.classCol-1{
+  background: #2dc000;
+}
 .classCol1{
   background: #443453;
 }

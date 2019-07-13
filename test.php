@@ -1,6 +1,6 @@
 <?php
-$day = date("N")-1;
-echo $day;
-$day++;
-echo $day;
+require_once("controller/functions.php");
+ECHO 'TEST';
+echo nextClassTime(getLocalByNumero(0604));
+ECHO 'TEST';
 ?>

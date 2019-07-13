@@ -49,7 +49,7 @@ foreach ($json_output->Locals as $tmp) {
 			<?php 
 				foreach ($json_output->Locals as $tmp) {
 					if(checkFree($tmp)){
-						echo '<div class="freeClass classCol1">';
+						echo '<div class="freeClass classCol-'.nextClassColor($tmp).'">';
 						echo '<p class="className"> ';
 						echo formatLocal($tmp);
 						echo '</p>';
@@ -59,7 +59,6 @@ foreach ($json_output->Locals as $tmp) {
 						else{
 							$temp = nextClassTime($tmp);
 						}
-
 						echo '<p class="classInfo">Until <span style="font-size: 1rem;">'.$temp.' </span></p>';
 						echo '</div>';
 					}
@@ -71,7 +70,7 @@ foreach ($json_output->Locals as $tmp) {
 			<?php 
 				foreach ($json_output->Locals as $tmp) {
 					if (!checkFree($tmp) ){
-						echo '<div class="freeClass classCol1">';
+						echo '<div class="freeClass classCol-1">';
 						echo '<p class="className"> ';
 						echo formatLocal($tmp);
 						echo '</p>';
