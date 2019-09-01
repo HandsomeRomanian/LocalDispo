@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once("includes/mobilecheck.php");
-require_once("controller/functions.php");
-$json_output = json_decode(file_get_contents("json/local.json"));
+require_once("../includes/mobilecheck.php");
+require_once("../controller/functions.php");
+$json_output = json_decode(file_get_contents("../json/local.json"));
 $Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
 $numLocal = '0000';
 foreach ($json_output->Locals as $tmp) {
@@ -17,12 +17,12 @@ foreach ($json_output->Locals as $tmp) {
 }
 ?>
 <!doctype html>
-<html lang="en" xml:lang="en" class="no-js">
+<html lang="fr" xml:lang="fr" class="no-js">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="../css/reset.css"> <!-- CSS reset -->
 	<!-- Bootstrap core CSS -->
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -32,52 +32,62 @@ foreach ($json_output->Locals as $tmp) {
 		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-	<link rel="stylesheet" href="css/new.css"> <!-- Resource style -->
-	<link rel="stylesheet" href="css/fonts.css">
-	<link rel="stylesheet" href="css/fontawsome.css">
+	<link rel="stylesheet" href="../css/new.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="../css/fonts.css">
+	<link rel="stylesheet" href="../css/fontawsome.css">
 
 	<title>Test dispso des locaux</title>
 </head>
 
 <body class="page-top">
-	<?php include("includes/nav.php"); ?>
+	<?php include("../includes/nav.php"); ?>
 
-	<main>
+	<main style="height: 100%">
+		<header class="masthead">
+			<h1 class="text-center text-uppercase "><?php echo $numLocal ?></h1>
+			<h2 class="text-center font-weight-light mb-0"></h2>
+		</header>
 
-		<header class="freeTitle">Curently Free</header><br>
-		<div class="curentlyDispo">
-			<?php 
-				foreach ($json_output->Locals as $tmp) {
-					if(checkFree($tmp)){
-						echo '<div class="freeClass classCol1">';
-						echo '<p class="className"> ';
-						echo formatLocal($tmp);
-						echo '</p>';
-						if( nextClassTime($tmp) == '00:00'){
-							$temp = 'tomorrow.';
-						}
-						else{
-							$temp = nextClassTime($tmp);
-						}
-
-						echo '<p class="classInfo">Until <span style="font-size: 1rem;">'.$temp.' </span></p>';
-						echo '</div>';
-					}
-				}
-			?>
-		</div>
-		<header class="freeTitle">Soon Free</header><br>
-		<div class="soonDispo">
-			<?php 
-				foreach ($json_output->Locals as $tmp) {
-					if (!checkFree($tmp) ){
-						echo '<div class="freeClass classCol1">';
-						echo '<p class="className"> ';
-						echo formatLocal($tmp);
-						echo '</p>';
-						echo '<p class="classInfo">In <span style="font-size: 1rem;">'.checkFree($tmp->Emplacement).' </span> hours.</p>';
-						echo '</div>';
-
+		<div class="grid-container">
+			<div class="calendarSiderbar">
+				<p>08:00 </p>
+				<p>09:00 </p>
+				<p>10:00 </p>
+				<p>11:00 </p>
+				<p>12:00 </p>
+				<p>01:00 </p>
+				<p>02:00 </p>
+				<p>03:00 </p>
+				<p>04:00 </p>
+				<p>05:00 </p>
+				<p>06:00 </p>
+			</div>
+			<div class="gridDay">
+				<!--TIME PLACEHOLDER THIS SHOULD REMAIN EMPTY-->
+			</div>
+			<div class="gridDay">Lundi</div>
+			<div class="gridDay">Mardi</div>
+			<div class="gridDay">Mercredi</div>
+			<div class="gridDay">Jeudi</div>
+			<div class="gridDay">Vendredi</div>
+			<?php
+				for ($i=0; $i < 6; $i++) { 
+					
+					foreach ($Local->Jours[$i]->Cours as $cours){
+							?>
+			<div class="gridClass 
+						classDay<?php echo $i+1;?> 
+						classCol<?php echo $cours->ID;?>
+						classStart<?php echo $cours->Start-8;?>
+						" style=" 
+  						grid-row-end: span <?php echo getDuration($cours->Start,$cours->End); ?>;
+						">
+				<p class="classTime"><?php echo $cours->Start." - ".$cours->End; ?></p>
+				<p class="className"><?php echo $cours->Nom;  ?></p>
+				<p class="classInfo"><?php echo $cours->Prof;  ?></p>
+				<!-- <p class="classInfo"><?php echo $cours->Nom;  ?></p> -->
+			</div>
+			<?php
 					}
 				}
 			?>
@@ -86,8 +96,7 @@ foreach ($json_output->Locals as $tmp) {
 	</main>
 
 
-	<?php include("includes/footer.php"); ?>
-
+	<?php include("../includes/footer.php"); ?>
 
 
 
