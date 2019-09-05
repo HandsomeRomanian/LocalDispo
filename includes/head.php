@@ -6,7 +6,6 @@ foreach ($json_output->Locals as $tmp) {
 	if ($tmp->Emplacement == $_GET["local"]) {
 		$Local = $tmp;
 		$numLocal = $Local->Emplacement;
-		$numLocal = substr($numLocal, 1);
 	}
 	if ($Local->Emplacement == '') {
 		$numLocal = 'Error';

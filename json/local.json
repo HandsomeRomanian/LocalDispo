@@ -1,7 +1,6 @@
 {
-    "Locals": [
-        {
-            "Emplacement": "0602",
+    "Locals": [{
+            "Emplacement": "602",
             "Jours": [{
                     "Cours": [{
                         "Nom": "Systèmes d'exploitation",
@@ -9,13 +8,13 @@
                         "Start": "08:10",
                         "End": "11:00",
                         "ID": "1"
-                    },{
+                    }, {
                         "Nom": "Systèmes d'exploitation",
                         "Prof": "Akkouche, A.",
                         "Start": "12:10",
                         "End": "15:00",
                         "ID": "2"
-                    },{
+                    }, {
                         "Nom": "Systèmes d'exploitation",
                         "Prof": "Akkouche, A.",
                         "Start": "15:10",
@@ -30,13 +29,13 @@
                         "Start": "08:10",
                         "End": "11:00",
                         "ID": "1"
-                    },{
+                    }, {
                         "Nom": "Systèmes d'exploitation",
                         "Prof": "Vincent Carrier",
                         "Start": "12:10",
                         "End": "15:00",
                         "ID": "2"
-                    },{
+                    }, {
                         "Nom": "Systèmes d'exploitation",
                         "Prof": "Vincent Carrier",
                         "Start": "15:10",
@@ -51,19 +50,19 @@
                         "Start": "08:10",
                         "End": "11:00",
                         "ID": "1"
-                    },{
+                    }, {
                         "Nom": "Systèmes d'exploitation",
                         "Prof": "Multiples",
                         "Start": "11:10",
                         "End": "12:00",
                         "ID": "2"
-                    },{
+                    }, {
                         "Nom": "Systèmes d'exploitation",
                         "Prof": "Multiples",
                         "Start": "14:10",
                         "End": "15:00",
                         "ID": "2"
-                    },{
+                    }, {
                         "Nom": "Systèmes d'exploitation",
                         "Prof": "Vincent Drolet",
                         "Start": "15:10",
@@ -72,19 +71,19 @@
                     }]
                 },
                 {
-                    "Cours":[{
+                    "Cours": [{
                         "Nom": "Systèmes d'exploitation",
                         "Prof": "Akkouche, A.",
                         "Start": "08:10",
                         "End": "11:00",
                         "ID": "1"
-                    },{
+                    }, {
                         "Nom": "Systèmes d'exploitation",
                         "Prof": "Akkouche, A.",
                         "Start": "12:10",
                         "End": "15:00",
                         "ID": "2"
-                    },{
+                    }, {
                         "Nom": "Systèmes d'exploitation",
                         "Prof": "Joris Deguet",
                         "Start": "15:10",
@@ -99,13 +98,13 @@
                         "Start": "08:10",
                         "End": "11:00",
                         "ID": "1"
-                    },{
+                    }, {
                         "Nom": "Systèmes d'exploitation",
                         "Prof": "Vincent Carrier",
                         "Start": "12:10",
                         "End": "15:00",
                         "ID": "2"
-                    },{
+                    }, {
                         "Nom": "Systèmes d'exploitation",
                         "Prof": "Vincent Carrier",
                         "Start": "15:10",
@@ -116,7 +115,7 @@
             ]
         },
         {
-            "Emplacement": "0603",
+            "Emplacement": "603",
             "Jours": [{
                     "Cours": [{
                             "Nom": "Programmation 1",
@@ -225,7 +224,7 @@
             ]
         },
         {
-            "Emplacement": "0620",
+            "Emplacement": "620",
             "Jours": [{
                     "Cours": [{
                             "Nom": "Programmation o.",
@@ -320,7 +319,7 @@
             ]
         },
         {
-            "Emplacement": "0622",
+            "Emplacement": "622",
             "Jours": [{
                     "Cours": [{
                             "Nom": "Programmation o.",
@@ -415,7 +414,7 @@
             ]
         },
         {
-            "Emplacement": "0624",
+            "Emplacement": "624",
             "Jours": [{
                     "Cours": [{
                             "Nom": "Programmation o.",
