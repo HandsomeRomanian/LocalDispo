@@ -37,25 +37,25 @@ include("../includes/head.php");
 			<div class="gridDay">Jeudi</div>
 			<div class="gridDay">Vendredi</div>
 			<?php
-				for ($i=0; $i < 6; $i++) { 
-					
-					foreach ($Local->Jours[$i]->Cours as $cours){
-							?>
-			<div class="gridClass 
-						classDay<?php echo $i+1;?> 
-						classCol<?php echo $cours->ID;?>
-						classStart<?php echo $cours->Start-8;?>
+			for ($i = 0; $i < 6; $i++) {
+
+				foreach ($Local->Jours[$i]->Cours as $cours) {
+					?>
+					<div class="gridClass 
+						classDay<?php echo $i + 1; ?> 
+						classCol<?php echo $cours->ID; ?>
+						classStart<?php echo $cours->Start - 8; ?>
 						" style=" 
-  						grid-row-end: span <?php echo getDuration($cours->Start,$cours->End); ?>;
+  						grid-row-end: span <?php echo getDuration($cours->Start, $cours->End); ?>;
 						">
-				<p class="classTime"><?php echo $cours->Start." - ".$cours->End; ?></p>
-				<p class="className"><?php echo $cours->Nom;  ?></p>
-				<p class="classInfo"><?php echo $cours->Prof;  ?></p>
-				<!-- <p class="classInfo"><?php echo $cours->Nom;  ?></p> -->
-			</div>
+						<p class="classTime"><?php echo $cours->Start . " - " . $cours->End; ?></p>
+						<p class="className"><?php echo $cours->Nom;  ?></p>
+						<p class="classInfo"><?php echo $cours->Prof;  ?></p>
+						<!-- <p class="classInfo"><?php echo $cours->Nom;  ?></p> -->
+					</div>
 			<?php
-					}
 				}
+			}
 			?>
 		</div>
 
