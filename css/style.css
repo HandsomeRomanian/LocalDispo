@@ -14,6 +14,14 @@ body {
 
 main{
   margin-bottom:12rem;
+  margin-top: 7rem;
+  margin-left: 15%;
+  margin-right: 10%;
+}
+
+header>h1{
+  font-weight: bold;
+  font-size: 6rem;
 }
 
 a {
@@ -55,11 +63,11 @@ footer{
 }
 
 .mediaIcons i{
-  width: 1em;
+  width: 1rem;
 }
 
 footer>div>div>div>h4{
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -75,20 +83,7 @@ footer>div>div>div>h4{
   margin-bottom:0px;
   padding-top:1.6rem;
 }
-/*
-General Stylings
-*/
 
-main{
-  margin-top: 5%;
-  margin-left: 15%;
-  margin-right: 10%;
-}
-
-header>h1{
-  font-weight: bold;
-  font-size: 6rem;
-}
 
 /*
 Calendar Section.
@@ -264,8 +259,8 @@ Free classes layout (class list layout)
 
 .freeClass{
   padding: 3%;
-  height:15em;
-  width:15em;
+  height:15rem;
+  width:15rem;
   box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   margin: 4px;
