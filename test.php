@@ -1,7 +1,10 @@
 <?php
 require_once("controller/functions.php");
+require_once("controller/db_connect.php");
 $json_output = json_decode(file_get_contents("json/local.json"));
 include "./models/class.php";
+
+connect_DB();
 
 $test = new User("yo",18);
 ?>
