@@ -1,10 +1,10 @@
 <?php
 class User {
  
-	private $name;
-	private $age;
+	var $name;
+	var $age;
  
-	function __construct( $name, $age ) {
+	function __construct(string $name,int $age ) {
 		$this->name = $name;
 		$this->age = $age;
 	}

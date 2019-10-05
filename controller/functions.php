@@ -1,6 +1,6 @@
 <?php
 $Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
-
+include "../models/class.php";
 function getDispo($jour, $numeroLocal){
     $json_output = json_decode(file_get_contents("json/local.json"));
     
@@ -55,7 +55,7 @@ function getLocalByNumero($numeroLocal){
 
 function formatLocal($Local){
 //this is temporary code.
-    $numeroLocal = substr($Local->Emplacement,1);
+    $numeroLocal = $Local->Emplacement;
     echo 'D-'.$numeroLocal;
 }
 
