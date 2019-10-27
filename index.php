@@ -3,6 +3,7 @@ $json_output = json_decode(file_get_contents("json/local.json"));
 require_once("includes/mobilecheck.php");
 require_once("controller/functions.php");
 include("includes/head.php");
+$dispoRooms  = json_decode(file_get_contents('http://192.168.0.190:8080/free'))
 ?>
 
 <body class="page-top">
