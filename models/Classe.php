@@ -2,21 +2,33 @@
 
 class Classe {
 
-    /** @var String $id */
-    private $classID;
-    private $startTime;
-    private $endTime;
-    private $dayID;
-    private $roomID;
-    private $teacher;
-    private $teacherID;
-    private $group;
-    private $groupID;
+    public $classID;
+    public $startTime;
+    public $endTime;
+    public $dayID;
+    public $roomID;
+    public $teacher;
+    public $teacherID;
+    public $group;
+    public $groupID;
 
-    function __construct(int $classID, Time $startTime, Time $endTime, int $dayID, int $localID, int $teacherID, int $groupID) {
+    public function __construct(int $classID, string $startTime, string $endTime, int $dayID, int $localID, int $teacherID, int $groupID) {
         $this->classID = $classID;
-        $this->startTime = $startTime;
-        $this->endTime = $endTime;
+        if (substr($startTime,0,2) != "12" && substr($startTime,-2) == 'PM'){
+            $this->startTime = substr($startTime, 0, 2) + 12;
+            $this->startTime = $this->startTime.":".substr($startTime, 3, 2);
+        }
+        else{
+            $this->startTime = substr($startTime, 0, 5);
+        }
+        if (substr($endTime,0,2) != "12" && substr($endTime,-2) == 'PM'){
+            $this->endTime = substr($endTime, 0, 2) + 12;
+            $this->endTime = $this->endTime.":".substr($endTime, 3, 2);
+            
+        }
+        else{
+            $this->endTime = substr($endTime, 0, 5);
+        }
         $this->dayID = $dayID;
         $this->roomID = $localID;
         $this->teacherID = $teacherID;
@@ -24,62 +36,14 @@ class Classe {
 
     }
 
-    // public int getDayOfWeek() {
-    //     return dayID;
-    // }
+    function getDuration(){
+        $end = substr($this->endTime, 0, 2);
+        $start = substr($this->startTime, 0, 2);
+        return $end - $start;
+    }
 
-    // public LocalTime getStartTime() {
-    //     return startTime.toLocalTime();
-    // }
-
-    // public LocalTime getEndTime() {
-    //     return endTime.toLocalTime();
-    // }
-
-    // public Local getRoom() {
-    //     Local out = DBService.getRoom(roomID);
-    //     return out;
-    // }
-
-    // public Boolean ended() {
-    //     LocalTime now = LocalDateTime.now().toLocalTime();
-        
-    //     if (now.compareTo(endTime.toLocalTime()) > 0){
-    //         return true;
-    //     }
-    //     else {
-    //         return false;
-    //     }
-    // }
-
-    // public Boolean started() {
-    //     LocalTime now = LocalDateTime.now().toLocalTime();
-        
-    //     if (now.compareTo(startTime.toLocalTime()) > 0){
-    //         return true;
-    //     }
-    //     else {
-    //         return false;
-    //     }
-    // }
-
-    // public static Long timeBetween(Time end, Time start) {
-    //     Duration dif = Duration.between(end.toLocalTime(), start.toLocalTime());
-    //     return dif.toMinutes();
-    // }
-
-    // public static Long timeBetween(Classe first, Classe second) {
-    //     Duration dif = Duration.between(first.endTime.toLocalTime(), second.startTime.toLocalTime());
-    //     return dif.toMinutes();
-    // }
-
-
-    // public LocalTime timeUntil() {
-    //     LocalTime now = LocalDateTime.now().toLocalTime();
-    //     Duration dif = Duration.between(now, $this->startTime.toLocalTime());
-    //     return LocalTime.ofNanoOfDay(dif.toNanos());
-    // }
+    function parseStart(){        
+        return substr($this->startTime,0,2) - 8;
+    }
 
 }
-
-?>

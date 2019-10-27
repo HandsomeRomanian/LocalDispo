@@ -53,10 +53,35 @@ function getLocalByNumero($numeroLocal){
     }
 }
 
-function formatLocal($Local){
-//this is temporary code.
+function formatLocal($Local){ //this is temporary code.
+
     $numeroLocal = substr($Local->Emplacement,1);
     echo 'D-'.$numeroLocal;
+}
+
+function getNumber($room) {
+    $out = "";
+    $stringWing = $room->wing + "";
+    if ($room->floor == 0 && ($stringWing.equalsIgnoreCase("D") || $stringWing.equalsIgnoreCase("E"))) {
+        $out += "00";
+
+        if ($room->number < 10) {
+            $out += "0" + Integer.toString($room->number);
+        }
+
+    } else if ($room->floor == 1 && ($stringWing.equalsIgnoreCase("D") || $stringWing.equalsIgnoreCase("E"))) {
+        $out += "0";
+
+        if ($room->number < 100) {
+            if ($room->number < 10)
+                $out += "00" + Integer.toString($room->number);
+        }
+
+    } else {
+        $out += Integer.toString($room->floor);
+    }
+
+    return $out;
 }
 
 function getDuration($start, $end){
@@ -96,6 +121,7 @@ function nextClassColor($Local){
         return '3';
     }
 }
+
 
 
 
