@@ -20,13 +20,6 @@ body {
     color: #777;
 }
 
-.thing {
-    max-width: 400px;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-}
-
 #contact input[type="text"],
 #contact input[type="email"],
 #contact input[type="tel"],

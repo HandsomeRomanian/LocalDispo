@@ -3,7 +3,7 @@
 function connect_DB(){
     try
     {
-        $bdd = new PDO('mysql:host=web.martin;dbname=schedule;charset=utf8', 'user', 'Passw0rd');
+        $bdd = new PDO('mysql:host=web.martin;dbname=schedule;charset=utf8', 'user', 'passw0rd');
         $bdd -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $bdd;
     }

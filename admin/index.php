@@ -1,10 +1,10 @@
 <?php
 
-require_once("models/Cours.php");
-require_once("models/Group.php");
-require_once("models/Room.php");
-require_once("models/Classe.php");
-require_once("models/Teacher.php");
+require_once("../models/Cours.php");
+require_once("../models/Group.php");
+require_once("../models/Room.php");
+require_once("../models/Classe.php");
+require_once("../models/Teacher.php");
 
 $profsJSON =  json_decode(file_get_contents('http://192.168.0.190:8080/teachers'), true);
 $classesJSON =  json_decode(file_get_contents('http://192.168.0.190:8080/classes'), true);
@@ -18,7 +18,7 @@ $profs = null;
 <html>
 
 <head>
-    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/admin/admin.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@ $profs = null;
 </head>
 
 <body>
-    <div class="thing">
+    <div class="container">
         <form id="contact" action="" method="post">
 
             <div class="row">
@@ -97,9 +97,10 @@ $profs = null;
             <input class="form-control" min="1000" max="1090" placeholder="Numero du groupe" name="groupNumber" type="number" tabindex="7" required autofocus>
             <br>
             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+
+        </form>
     </div>
-    </form>
-    </div>
+
 
 
 
@@ -108,7 +109,7 @@ $profs = null;
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/locale/nl.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
-    <script type="text/javascript" src="/js/admin.js"></script>
+    <script type="text/javascript" src="/admin/admin.js"></script>
 </body>
 
 </html>
