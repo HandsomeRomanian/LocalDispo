@@ -1,10 +1,9 @@
 <?php
 session_start();
-$dispoRooms  = json_decode(file_get_contents('http://192.168.0.190:8080/free'));
+require_once($_SERVER['DOCUMENT_ROOT']."/controller/API.php");
+$API = new API();
 require_once("includes/mobilecheck.php");
-require_once("models/Classe.php");
-require_once("models/Room.php");
-$Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
+$dispoRooms = $API->getDispo();
 
 ?>
 
@@ -36,21 +35,22 @@ $Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
 		<div class="curentlyDispo">
 			<?php
 			foreach ($dispoRooms as $tmp) {
-				
 				if ($tmp->dispo) {
-					$local = new Room($tmp->room->localID,$tmp->room->wing,$tmp->room->floor,$tmp->room->number,$tmp->room->places,$tmp->room->typeID); 
-					echo '<div class="freeClass classCol1" onclick="window.location=\'/views/schedule.php?local=' . $local->localID . '\';">';
-					echo '<p class="className"> ';
-					echo $local->getFull();
-					echo '</p>';
-					if ($tmp->time->hour == '23') {
-						$time = 'tomorrow.';
-					} else {
-						$time = $tmp->time->hour.":".$tmp->time->minute;
-					}
+					$local = new Room($tmp->room->localID, $tmp->room->wing, $tmp->room->floor, $tmp->room->number, $tmp->room->places, $tmp->room->typeID);
+					?>
+					<div class="freeClass classCol1" onclick="window.location='/views/schedule.php?room=<?php echo $local->localID; ?>';">
+						<p class="className">
+							<?php echo $local->getFull(); ?>
+						</p>
+						<?php if ($tmp->isToday()) {
+									$time = 'tomorrow.';
+								} else {
+									$time = $tmp->time;
+								} ?>
 
-					echo '<p class="classInfo">Until <span style="font-size: 1rem;">' . $time . ' </span></p>';
-					echo '</div>';
+						<p class="classInfo">Until <span style="font-size: 1rem;"> <?php echo $time ?></span></p>
+					</div>
+			<?php
 				}
 			}
 			?>
@@ -60,16 +60,17 @@ $Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
 			<?php
 			foreach ($dispoRooms as $tmp) {
 				if (!$tmp->dispo) {
-					$local = new Room($tmp->room->localID,$tmp->room->wing,$tmp->room->floor,$tmp->room->number,$tmp->room->places,$tmp->room->typeID); 
-					echo '<div class="freeClass classCol1" onclick="window.location=\'/views/schedule.php?local=' . $local->getID() . '\';">';
-					echo '<p class="className"> ';
-					echo $local->getFull();
-					echo '</p>';
-					echo '<p class="classInfo">In <span style="font-size: 1rem;">' . $tmp->time->hour . ' </span> hours '. $tmp->time->minute .' minutes.</p>';
-					echo '</div>';
-				}
-			}
-			?>
+					$local = new Room($tmp->room->localID, $tmp->room->wing, $tmp->room->floor, $tmp->room->number, $tmp->room->places, $tmp->room->typeID);
+					?>
+					<div class="freeClass classCol1" onclick="window.location='/views/schedule.php?room=<?php echo $local->localID; ?>';">
+						<p class="className">
+							<?php echo $local->getFull(); ?>
+						</p>
+						<p class="classInfo">At <span style="font-size: 1rem;"><?php $tmp->time ?> </span></p>
+					</div><?php
+								}
+							}
+							?>
 		</div>
 
 	</main>

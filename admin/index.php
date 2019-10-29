@@ -6,9 +6,9 @@ require_once("../models/Room.php");
 require_once("../models/Classe.php");
 require_once("../models/Teacher.php");
 
-$profsJSON =  json_decode(file_get_contents('http://192.168.0.190:8080/teachers'), true);
-$classesJSON =  json_decode(file_get_contents('http://192.168.0.190:8080/classes'), true);
-$roomsJSON =  json_decode(file_get_contents('http://192.168.0.190:8080/rooms'), true);
+$profsJSON =  getAPI('Teachers');
+$classesJSON =  getAPI('Classes');
+$roomsJSON =  getAPI('Rooms');
 
 $profs = null;
 

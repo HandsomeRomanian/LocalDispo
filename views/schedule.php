@@ -1,18 +1,8 @@
 <?php
 session_start();
-require_once("../models/Classe.php");
-require_once("../models/Room.php");
-require_once("../models/Teacher.php");
-require_once("../models/Group.php");
-require_once("../includes/mobilecheck.php");
-require_once("../controller/functions.php");
-$response =  json_decode(file_get_contents('http://192.168.0.190:8080/rooms/' . $_GET['local']), true);
-$local = new Room($response['localID'], $response['wing'], $response['floor'], $response['number'], $response['places'], $response['typeID']);
-foreach ($response['classes'] as $tmp) {
-	$classe = new Classe($tmp['classID'], $tmp['startTime'], $tmp['endTime'], $tmp['dayID'], $tmp['roomID'], $tmp['teacherID'], $tmp['groupID']);
-	$classe->teacher = new Teacher($tmp['teacher']['teacherID'],$tmp['teacher']['teacherFirstName'],$tmp['teacher']['teacherFamName']);
-	array_push($local->classes , $classe);
-}
+require_once($_SERVER['DOCUMENT_ROOT']."/controller/API.php");
+$API = new API();
+$local = $API->getRoom((int)$_GET['room']);
 $Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
 
 ?>
@@ -59,7 +49,7 @@ $Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
 				<p>18:00</p>
 			</div>
 			<div class="gridDay">
-				<!--TIME PLACEHOLDER THIS SHOULD REMAIN EMPTY-->
+				<!--This is the hour headder-->
 			</div>
 			<div class="gridDay">Lundi</div>
 			<div class="gridDay">Mardi</div>
@@ -68,7 +58,7 @@ $Jours = ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi"];
 			<div class="gridDay">Vendredi</div>
 			<?php
 			foreach ($local->classes as $cours) {
-				$cours->group = getGroup($cours->groupID);
+				$cours->group = $API->getGroup($cours->groupID);
 				?>
 				<div class="gridClass 
 						classDay<?php echo $cours->dayID; ?> 

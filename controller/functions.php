@@ -1,16 +1,29 @@
 <?php
-require_once("../models/Cours.php");
-require_once("../models/Group.php");
-require_once("../models/Room.php");
-require_once("../models/Classe.php");
 
-function getGroup(int $id): Group
+require_once($_SERVER['DOCUMENT_ROOT'] . "/models/Classe.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/models/Room.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/models/Teacher.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/models/Group.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/models/Cours.php");
+define("API_LINK", 'http://192.168.0.190:8080/');
+
+
+function getAPI($string)
 {
-    $response =  json_decode(file_get_contents('http://192.168.0.190:8080/groups/' . $id), true);
-    $output = new Group($response['groupID'],$response['groupNumber'],new Cours($response['cours']['coursID'],$response['cours']['name'],$response['cours']['code'],$response['cours']['info']));
-    return $output;
+    return json_decode(file_get_contents(API_LINK . $string));
 }
 
 
+function getGroup(int $id)
+{
+    $response =  getAPI("groups/" . $id);
+    return new Group($response->groupID, $response->groupNumber, new Cours($response->cours->coursID, $response->cours->name, $response->cours->code, $response->cours->info));
+}
+
+function getTeacher(int $id)
+{
+    $response = getAPI("teachers/" . $id);
+    return new Teacher($response->teacherID, $response->teacherFirstName, $response->teacherFamName);
+}
 
 ?>
