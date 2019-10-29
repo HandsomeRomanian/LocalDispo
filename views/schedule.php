@@ -5,7 +5,7 @@ require_once("../models/Room.php");
 require_once("../models/Teacher.php");
 require_once("../models/Group.php");
 require_once("../includes/mobilecheck.php");
-require_once("../controller/functionsAPI.php");
+require_once("../controller/functions.php");
 $response =  json_decode(file_get_contents('http://192.168.0.190:8080/rooms/' . $_GET['local']), true);
 $local = new Room($response['localID'], $response['wing'], $response['floor'], $response['number'], $response['places'], $response['typeID']);
 foreach ($response['classes'] as $tmp) {
