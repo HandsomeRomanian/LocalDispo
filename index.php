@@ -36,9 +36,9 @@ $dispoRooms = $API->getDispo();
 			<?php
 			foreach ($dispoRooms as $tmp) {
 				if ($tmp->dispo) {
-					$local = new Room($tmp->room->localID, $tmp->room->wing, $tmp->room->floor, $tmp->room->number, $tmp->room->places, $tmp->room->typeID);
+					$local = new Room($tmp->room->roomID, $tmp->room->wing, $tmp->room->floor, $tmp->room->number, $tmp->room->type, $tmp->room->places);
 					?>
-					<div class="freeClass classCol1" onclick="window.location='/views/schedule.php?room=<?php echo $local->localID; ?>';">
+					<div class="freeClass classCol1" onclick="window.location='/views/schedule.php?room=<?php echo $local->roomID; ?>';">
 						<p class="className">
 							<?php echo $local->getFull(); ?>
 						</p>

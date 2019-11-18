@@ -2,7 +2,7 @@
 
 class Room {
 
-    public $localID;
+    public $roomID;
     public $wing;
     public  $floor;
     public $number;
@@ -12,7 +12,7 @@ class Room {
     public  $classes = array();
 
     public function __construct(int $id,String $wing, int $floor, int $number, String $type, int $places) {
-        $this->localID = $id;
+        $this->roomID = $id;
         $this->wing = strtoupper($wing);
         $this->floor = $floor;
         $this->number = $number;

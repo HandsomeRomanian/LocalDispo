@@ -5,12 +5,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/models/Room.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/models/Teacher.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/models/Group.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/models/Cours.php");
-define("API_LINK", 'http://192.168.0.190:8080/');
+define("API_LINK", 'http://192.168.0.15:8082/');
 
 
 function getAPI($string)
 {
-    return json_decode(file_get_contents(API_LINK . $string));
+    return json_decode(file_get_contents(API_LINK . $string),true);
 }
 
 

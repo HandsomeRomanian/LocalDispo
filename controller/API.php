@@ -7,13 +7,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/models/Cours.php");
 require_once($_SERVER['DOCUMENT_ROOT'] . "/models/DispoRoom.php");
 
 
-
-
-
 class API
 {
 
-    private $link = 'http://api.martin:8088/';
+    private $link = 'http://192.168.0.15:8082/';
 
 
     public function __construct()
@@ -42,7 +39,7 @@ class API
         $output = array();
         $response = $this->request("free/");
         foreach ($response as $tmp) {
-            $room = new Room($tmp->room->localID, $tmp->room->wing, $tmp->room->floor, $tmp->room->number, $tmp->room->typeID, $tmp->room->places);
+            $room = new Room($tmp->room->roomID, $tmp->room->wing, $tmp->room->floor, $tmp->room->number, $tmp->room->type, $tmp->room->places);
             array_push($output, new DispoRoom($room, $tmp->dispo, $tmp->time->hour . ":" . $tmp->time->minute));
         }
         return $output;
@@ -51,7 +48,7 @@ class API
     function getRoom(int $id)
     {
         $response =  $this->request('rooms/' .$id);
-        $local = new Room($response->localID, $response->wing, $response->floor, $response->number, $response->places, $response->typeID);
+        $local = new Room($response->roomID, $response->wing, $response->floor, $response->number, $response->type, $response->places);
         foreach ($response->classes as $tmp) {
             $classe = new Classe($tmp->classID, $tmp->startTime, $tmp->endTime, $tmp->dayID, $tmp->roomID, $tmp->teacherID, $tmp->groupID);
             $classe->teacher = new Teacher($tmp->teacher->teacherID, $tmp->teacher->teacherFirstName, $tmp->teacher->teacherFamName);

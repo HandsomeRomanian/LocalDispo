@@ -5,12 +5,12 @@ require_once("../models/Group.php");
 require_once("../models/Room.php");
 require_once("../models/Classe.php");
 require_once("../models/Teacher.php");
+require_once("../controller/functions.php");
 
-$profsJSON =  getAPI('Teachers');
-$classesJSON =  getAPI('Classes');
-$roomsJSON =  getAPI('Rooms');
+$profsJSON =  getAPI('teachers');
+$classesJSON =  getAPI('courses');
+$roomsJSON =  getAPI('rooms');
 
-$profs = null;
 
 ?>
 
@@ -63,12 +63,12 @@ $profs = null;
                 <option value="5">Vendredi</option>
             </select>
             <br>
-            <select class="form-control" name="localID" tabindex="4">
+            <select class="form-control" name="roomID" tabindex="4">
                 <?php
                 foreach ($roomsJSON as $room) {
-                    $room = new Room($room['localID'], $room['wing'], $room['floor'], $room['number'], $room['places'], $room['typeID']);
+                    $room = new Room($room['roomID'], $room['wing'], $room['floor'], $room['number'], $room['type'], $room['places']);
                     ?>
-                    <option value="<?php echo $room->localID; ?>"><?php echo $room->getFull(); ?></option>
+                    <option value="<?php echo $room->roomID; ?>"><?php echo $room->getFull(); ?></option>
                 <?php
                 }
                 ?>
