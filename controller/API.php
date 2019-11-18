@@ -13,7 +13,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/models/DispoRoom.php");
 class API
 {
 
-    private $link = 'http://192.168.0.190:8080/';
+    private $link = 'http://api.martin:8088/';
 
 
     public function __construct()

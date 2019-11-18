@@ -7,16 +7,16 @@ class Room {
     public  $floor;
     public $number;
     public $places;
-    public $typeID;
+    public $type;
     // char salle;
     public  $classes = array();
 
-    public function __construct(int $id,String $wing, int $floor, int $number, int $typeID, int $places) {
+    public function __construct(int $id,String $wing, int $floor, int $number, String $type, int $places) {
         $this->localID = $id;
         $this->wing = strtoupper($wing);
         $this->floor = $floor;
         $this->number = $number;
-        $this->typeID = $typeID;
+        $this->type = $type;
         $this->places = $places;
     }
 

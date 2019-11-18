@@ -66,7 +66,7 @@ $dispoRooms = $API->getDispo();
 						<p class="className">
 							<?php echo $local->getFull(); ?>
 						</p>
-						<p class="classInfo">At <span style="font-size: 1rem;"><?php $tmp->time ?> </span></p>
+						<p class="classInfo">At <span style="font-size: 1rem;"><?php echo $tmp->time ?> </span></p>
 					</div><?php
 								}
 							}
